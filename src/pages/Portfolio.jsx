@@ -106,9 +106,9 @@ const Portfolio = () => {
                                 </div>
                                 <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1rem' }}>{project.client}</h3>
                                 <p style={{ color: 'var(--color-text-light)', marginBottom: '1.5rem' }}>{project.description}</p>
-                                <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: '600', color: 'var(--color-text)' }}>
+                                {/* <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: '600', color: 'var(--color-text)' }}>
                                     View Profile <ExternalLink size={16} />
-                                </a>
+                                </a> */}
                             </div>
                         </div>
                     ))}
