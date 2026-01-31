@@ -59,10 +59,11 @@ const Contact = () => {
                                     <Phone size={24} />
                                 </div>
                                 <div>
-                                    <h3 style={{ fontSize: '1.2rem', fontWeight: '600', marginBottom: '0.5rem' }}>Call us</h3>
-                                    <p style={{ color: 'var(--color-text-light)', marginBottom: '0.5rem' }}>Mon-Fri from 8am to 5pm.</p>
-                                    <a href="tel:+254700000000" style={{ color: 'var(--color-text)', fontWeight: '600' }}>+254 700 000 000</a>
-                                </div>
+                                    <div>
+                                        <h3 style={{ fontSize: '1.2rem', fontWeight: '600', marginBottom: '0.5rem' }}>Call us</h3>
+                                        <p style={{ color: 'var(--color-text-light)', marginBottom: '0.5rem' }}>Mon-Fri from 8am to 5pm.</p>
+                                        <a href="tel:+254731785795" style={{ color: 'var(--color-text)', fontWeight: '600' }}>+254 731 785 795</a>
+                                    </div>                </div>
                             </div>
 
                             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>

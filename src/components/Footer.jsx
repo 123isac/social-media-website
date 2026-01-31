@@ -48,7 +48,7 @@ const Footer = () => {
                             </li>
                             <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', color: 'var(--color-text-light)' }}>
                                 <Phone size={18} />
-                                <span>+254 700 000 000</span>
+                                <span>+254 731 785 795</span>
                             </li>
                         </ul>
                     </div>

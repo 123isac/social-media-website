@@ -156,7 +156,7 @@ const Register = () => {
                                         fontFamily: 'inherit',
                                         fontSize: '1rem'
                                     }}
-                                    placeholder="+254 700 000 000"
+                                    placeholder="+254 731 785 795"
                                 />
                             </div>
 
