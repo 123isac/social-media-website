@@ -16,7 +16,7 @@ const Footer = () => {
                     {/* Brand */}
                     <div>
                         <h3 style={{ fontSize: '1.5rem', fontWeight: '700', marginBottom: '1rem', color: 'var(--color-primary)' }}>
-                            SocialBoost
+                            Smart Socials
                         </h3>
                         <p style={{ color: 'var(--color-text-light)', marginBottom: '1.5rem' }}>
                             Helping small businesses stay active, professional, and engaging on social media.
@@ -55,7 +55,7 @@ const Footer = () => {
                 </div>
 
                 <div style={{ borderTop: '1px solid #f1f5f9', paddingTop: '2rem', textAlign: 'center', color: '#94a3b8', fontSize: '0.9rem' }}>
-                    &copy; {new Date().getFullYear()} SocialBoost. All rights reserved.
+                    &copy; {new Date().getFullYear()} Smart Socials. All rights reserved.
                 </div>
             </div>
         </footer>

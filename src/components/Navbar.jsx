@@ -42,8 +42,7 @@ const Navbar = () => {
                         gap: '0.5rem',
                         color: 'var(--color-primary)'
                     }}>
-                        <Instagram size={28} />
-                        <span>SocialBoost</span>
+                        <span>Smart Socials</span>
                     </Link>
 
                     {/* Desktop Nav */}

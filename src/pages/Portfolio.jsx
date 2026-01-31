@@ -116,7 +116,7 @@ const Portfolio = () => {
 
                 <div style={{ textAlign: 'center', marginTop: '5rem', padding: '4rem', background: 'var(--color-secondary)', borderRadius: 'var(--radius)' }}>
                     <h2 style={{ fontSize: '2rem', fontWeight: '800', marginBottom: '1rem' }}>Ready to See Your Brand Here?</h2>
-                    <p style={{ marginBottom: '2rem', color: 'var(--color-text-light)' }}>Join hundreds of other businesses growing with SocialBoost.</p>
+                    <p style={{ marginBottom: '2rem', color: 'var(--color-text-light)' }}>Join hundreds of other businesses growing with Smart Socials.</p>
                     <Link to="/register">
                         <Button variant="primary">Start Your Journey</Button>
                     </Link>
