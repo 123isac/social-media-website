@@ -56,8 +56,8 @@ const Packages = () => {
 
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                    gap: '2rem',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', /* Reduced from 280px */
+                    gap: '1.5rem', /* Reduced gap */
                     alignItems: 'start'
                 }}>
                     {packages.map((pkg, index) => (
