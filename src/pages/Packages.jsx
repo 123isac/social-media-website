@@ -4,45 +4,46 @@ import { CheckCircle } from 'lucide-react';
 import Button from '../components/Button';
 
 const Packages = () => {
-    const [activeTab, setActiveTab] = useState(1); // Default to 'Pro' (index 1)
+    const [activeTab, setActiveTab] = useState(1); // Default to 'Plus' (index 1)
 
     const packages = [
         {
             name: "Go",
             price: "4,000",
+            tagline: "For businesses that just need an online presence.",
             features: [
-                { name: "4 Posts per week", included: true },
-                { name: "Basic Captions", included: true },
-                { name: "Hashtag Strategy", included: true },
-                { name: "Story Reposts", included: false },
-                { name: "Monthly Report", included: false },
-                { name: "Community Management", included: false }
+                { name: "3 Posts per week", included: true },
+                { name: "Basic captions", included: true },
+                { name: "Brand consistency", included: true },
+                { name: "Page stays active", included: true }
             ],
             popular: false
         },
         {
-            name: "Pro",
+            name: "Plus",
             price: "8,000",
+            tagline: "For brands that want consistency and a professional look.",
             features: [
                 { name: "5 Posts per week", included: true },
-                { name: "Engaging Captions", included: true },
-                { name: "Hashtag Strategy", included: true },
-                { name: "Story Reposts", included: true },
-                { name: "Monthly Report", included: true },
-                { name: "Community Management", included: false }
+                { name: "Engaging captions with hooks", included: true },
+                { name: "Hashtag optimization", included: true },
+                { name: "Content calendar", included: true },
+                { name: "Bio & highlights setup", included: true }
             ],
             popular: true
         },
         {
             name: "Premium",
             price: "16,000",
+            tagline: "For businesses that want social media to bring clients.",
             features: [
-                { name: "Daily Posts (7/week)", included: true },
-                { name: "Premium Captions", included: true },
-                { name: "Advanced Hashtags", included: true },
-                { name: "Daily Stories", included: true },
-                { name: "Weekly Reports", included: true },
-                { name: "Full Community Mgmt", included: true }
+                { name: "7 Posts per week", included: true },
+                { name: "Content strategy", included: true },
+                { name: "Target audience definition", included: true },
+                { name: "Conversion-focused posts", included: true },
+                { name: "Engagement support", included: true },
+                { name: "Performance tracking", included: true },
+                { name: "Priority support", included: true }
             ],
             popular: false
         }
@@ -124,7 +125,9 @@ const Packages = () => {
                             {activePackage.price}
                             <span style={{ fontSize: '1rem', color: 'var(--color-text-light)', fontWeight: '500' }}>/mo</span>
                         </div>
-                        <p style={{ color: 'var(--color-text-light)' }}>billed monthly</p>
+                        <p style={{ color: 'var(--color-text-light)', fontSize: '0.95rem', marginTop: '0.5rem' }}>
+                            {activePackage.tagline}
+                        </p>
                     </div>
 
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2.5rem' }}>
