@@ -30,7 +30,7 @@ const Home = () => {
                     <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'var(--color-text-light)', marginBottom: '2.5rem', lineHeight: '1.6' }}>
                         Daily posts, story updates, and engagement management — so you look serious online without lifting a finger.
                     </p>
-                    <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
+                    <div className="hero-buttons" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap' }}>
                         <Link to="/register">
                             <Button variant="primary">Get Started</Button>
                         </Link>
