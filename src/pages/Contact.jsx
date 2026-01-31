@@ -4,10 +4,27 @@ import { Mail, Phone, MapPin, Send, MessageSquare } from 'lucide-react';
 
 const Contact = () => {
     const [submitted, setSubmitted] = useState(false);
+    const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setSubmitted(true);
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "contact", ...formData })
+        })
+            .then(() => setSubmitted(true))
+            .catch(error => alert(error));
     };
 
     return (
@@ -80,7 +97,14 @@ const Contact = () => {
                     </div>
 
                     {/* Contact Form */}
-                    <form className="glass-card" style={{ padding: '3rem' }} onSubmit={handleSubmit}>
+                    <form
+                        className="glass-card"
+                        style={{ padding: '3rem' }}
+                        onSubmit={handleSubmit}
+                        name="contact"
+                        data-netlify="true"
+                    >
+                        <input type="hidden" name="form-name" value="contact" />
                         {submitted ? (
                             <div style={{ textAlign: 'center', padding: '2rem 0' }}>
                                 <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#22c55e' }}>Message Sent!</h3>
@@ -91,15 +115,36 @@ const Contact = () => {
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                                 <div>
                                     <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Name</label>
-                                    <input type="text" required placeholder="Your name" style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: 'var(--radius)', border: '1px solid #e2e8f0', fontFamily: 'inherit' }} />
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        required
+                                        placeholder="Your name"
+                                        onChange={handleChange}
+                                        style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: 'var(--radius)', border: '1px solid #e2e8f0', fontFamily: 'inherit' }}
+                                    />
                                 </div>
                                 <div>
                                     <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Email</label>
-                                    <input type="email" required placeholder="you@company.com" style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: 'var(--radius)', border: '1px solid #e2e8f0', fontFamily: 'inherit' }} />
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        required
+                                        placeholder="you@company.com"
+                                        onChange={handleChange}
+                                        style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: 'var(--radius)', border: '1px solid #e2e8f0', fontFamily: 'inherit' }}
+                                    />
                                 </div>
                                 <div>
                                     <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: '500' }}>Message</label>
-                                    <textarea required rows="4" placeholder="How can we help?" style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: 'var(--radius)', border: '1px solid #e2e8f0', fontFamily: 'inherit', resize: 'vertical' }}></textarea>
+                                    <textarea
+                                        name="message"
+                                        required
+                                        rows="4"
+                                        placeholder="How can we help?"
+                                        onChange={handleChange}
+                                        style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: 'var(--radius)', border: '1px solid #e2e8f0', fontFamily: 'inherit', resize: 'vertical' }}
+                                    ></textarea>
                                 </div>
                                 <Button type="submit" variant="primary" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
                                     Send Message <Send size={18} />

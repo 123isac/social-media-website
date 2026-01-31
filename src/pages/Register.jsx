@@ -28,13 +28,23 @@ const Register = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
+    // Helper helper to encode data for Netlify
+    const encode = (data) => {
+        return Object.keys(data)
+            .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+            .join("&");
+    }
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Simulate API call
-        console.log('Form submitted:', formData);
-        setTimeout(() => {
-            setSubmitted(true);
-        }, 1000);
+
+        fetch("/", {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: encode({ "form-name": "registration", ...formData })
+        })
+            .then(() => setSubmitted(true))
+            .catch(error => alert(error));
     };
 
     if (submitted) {
@@ -73,7 +83,14 @@ const Register = () => {
                         <p style={{ color: 'var(--color-text-light)' }}>Complete the form below to register your account.</p>
                     </div>
 
-                    <form className="glass-card" style={{ padding: '3rem' }} onSubmit={handleSubmit}>
+                    <form
+                        className="glass-card"
+                        style={{ padding: '3rem' }}
+                        onSubmit={handleSubmit}
+                        name="registration"
+                        data-netlify="true"
+                    >
+                        <input type="hidden" name="form-name" value="registration" />
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 
                             {/* Full Name */}
