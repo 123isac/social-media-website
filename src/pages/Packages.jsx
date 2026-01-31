@@ -45,7 +45,8 @@ const Packages = () => {
                 { name: "Performance tracking", included: true },
                 { name: "Priority support", included: true }
             ],
-            popular: false
+            popular: false,
+            recommended: true
         }
     ];
 
@@ -116,6 +117,23 @@ const Packages = () => {
                             textTransform: 'uppercase'
                         }}>
                             Most Popular
+                        </div>
+                    )}
+
+                    {activePackage.recommended && (
+                        <div style={{
+                            position: 'absolute',
+                            top: activePackage.popular ? '2.5rem' : '0.5rem', // Adjust top if popular badge is also present
+                            right: '1rem',
+                            background: '#10b981',
+                            color: 'white',
+                            padding: '0.25rem 0.75rem',
+                            borderRadius: '2rem',
+                            fontSize: '0.75rem',
+                            fontWeight: '700',
+                            textTransform: 'uppercase'
+                        }}>
+                            Recommended
                         </div>
                     )}
 
