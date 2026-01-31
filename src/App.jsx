@@ -29,7 +29,7 @@ function App() {
             <Route path="/packages" element={<Packages />} />
             <Route path="/register" element={<Register />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/portfolio" element={<Portfolio />} />
+            {/* <Route path="/portfolio" element={<Portfolio />} /> */}
           </Routes>
         </main>
         <Footer />

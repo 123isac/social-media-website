@@ -119,42 +119,6 @@ const Home = () => {
                     </div>
                 </div>
             </section>
-
-            {/* Portfolio Preview */}
-            <section className="section" style={{ background: 'white' }}>
-                <div className="container">
-                    <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                        <h2 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '1rem' }}>Our Work</h2>
-                        <p style={{ color: 'var(--color-text-light)' }}>Sample work showing professional layout & engagement style</p>
-                    </div>
-
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
-                        {/* Gradient Placeholders for Portfolio Items */}
-                        {[
-                            { img: '/sample-jewellery.png', title: 'Elegant Jewellery Brand', tag: 'Daily posts & Story engagement' },
-                            { img: '/sample-cafe.png', title: 'Urban Coffee Shop', tag: 'Aesthetic food photography' },
-                            { img: '/sample-real-estate.png', title: 'Luxury Real Estate', tag: 'Lead generation campaigns' }
-                        ].map((item, index) => (
-                            <div key={index} style={{ borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
-                                <div style={{
-                                    height: '300px',
-                                    position: 'relative'
-                                }}>
-                                    <img
-                                        src={item.img}
-                                        alt={item.title}
-                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-                                    />
-                                </div>
-                                <div style={{ padding: '1.5rem' }}>
-                                    <p style={{ fontWeight: '600', color: 'var(--color-text)' }}>{item.title}</p>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)' }}>{item.tag}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
         </div>
     );
 };
