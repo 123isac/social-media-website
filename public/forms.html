@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Helper</title>
+</head>
+
+<body>
+    <!-- 
+      Netlify needs to see these forms in the HTML at build time to register them.
+      Since React renders forms with JavaScript, we place these hidden static versions here.
+    -->
+
+    <!-- Contact Form -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="name" />
+        <input type="email" name="email" />
+        <textarea name="message"></textarea>
+    </form>
+
+    <!-- Registration Form -->
+    <form name="registration" netlify netlify-honeypot="bot-field" hidden>
+        <input type="text" name="fullName" />
+        <input type="text" name="businessName" />
+        <input type="email" name="email" />
+        <input type="tel" name="phone" />
+        <select name="packageType"></select>
+        <textarea name="notes"></textarea>
+    </form>
+</body>
+
+</html>
