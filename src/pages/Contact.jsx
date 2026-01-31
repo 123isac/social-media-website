@@ -28,10 +28,10 @@ const Contact = () => {
     };
 
     return (
-        <div style={{ padding: '8rem 0 5rem' }}>
+        <div style={{ padding: 'var(--section-padding) 0 4rem' }}>
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                    <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}>Get in Touch</h1>
+                    <h1 style={{ fontSize: 'var(--h1-size)', fontWeight: '800', marginBottom: '1rem' }}>Get in Touch</h1>
                     <p style={{ fontSize: '1.2rem', color: 'var(--color-text-light)' }}>
                         Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
                     </p>
@@ -39,7 +39,7 @@ const Contact = () => {
 
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                     gap: '4rem',
                     maxWidth: '1000px',
                     margin: '0 auto'

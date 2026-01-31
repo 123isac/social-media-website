@@ -75,11 +75,11 @@ const Register = () => {
     }
 
     return (
-        <div style={{ padding: '8rem 0 5rem' }}>
+        <div style={{ padding: 'var(--section-padding) 0 4rem' }}>
             <div className="container">
                 <div style={{ maxWidth: '600px', margin: '0 auto' }}>
                     <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                        <h1 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '1rem' }}>Get Started</h1>
+                        <h1 style={{ fontSize: 'var(--h1-size)', fontWeight: '800', marginBottom: '1rem' }}>Get Started</h1>
                         <p style={{ color: 'var(--color-text-light)' }}>Complete the form below to register your account.</p>
                     </div>
 

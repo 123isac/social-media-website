@@ -8,7 +8,7 @@ const Home = () => {
         <div className="home-page">
             {/* Hero Section */}
             <section style={{
-                padding: '8rem 0 5rem',
+                padding: 'var(--section-padding) 0 4rem', // Reduced bottom padding
                 background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(59, 130, 246, 0.05) 100%)',
                 textAlign: 'center'
             }}>
@@ -17,7 +17,7 @@ const Home = () => {
                         Professional Social Media Management
                     </div>
                     <h1 style={{
-                        fontSize: '3.5rem',
+                        fontSize: 'var(--h1-size)', // Responsive
                         fontWeight: '800',
                         marginBottom: '1.5rem',
                         lineHeight: '1.1',
@@ -27,7 +27,7 @@ const Home = () => {
                     }}>
                         Helping Small Businesses Stay Active & Professional
                     </h1>
-                    <p style={{ fontSize: '1.25rem', color: 'var(--color-text-light)', marginBottom: '2.5rem', lineHeight: '1.6' }}>
+                    <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: 'var(--color-text-light)', marginBottom: '2.5rem', lineHeight: '1.6' }}>
                         Daily posts, story updates, and engagement management — so you look serious online without lifting a finger.
                     </p>
                     <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -42,9 +42,9 @@ const Home = () => {
             </section>
 
             {/* About Section - Value Props */}
-            <section className="section" style={{ background: 'white' }}>
+            <section className="section" style={{ background: 'white', padding: '4rem 0' }}>
                 <div className="container">
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem' }}> {/* Adjusted minmax */}
                         {/* Feature 1 */}
                         <div className="glass-card" style={{ padding: '2rem', textAlign: 'center' }}>
                             <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'var(--color-secondary)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', color: 'var(--color-primary)' }}>

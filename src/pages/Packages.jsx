@@ -45,10 +45,10 @@ const Packages = () => {
     ];
 
     return (
-        <div style={{ padding: '8rem 0 5rem' }}>
+        <div style={{ padding: 'var(--section-padding) 0 4rem' }}>
             <div className="container">
                 <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                    <h1 style={{ fontSize: '3rem', fontWeight: '800', marginBottom: '1rem' }}>Simple, Transparent Pricing</h1>
+                    <h1 style={{ fontSize: 'var(--h1-size)', fontWeight: '800', marginBottom: '1rem' }}>Simple, Transparent Pricing</h1>
                     <p style={{ fontSize: '1.2rem', color: 'var(--color-text-light)' }}>
                         Choose the package that fits your business needs. No long-term contracts.
                     </p>
@@ -56,7 +56,7 @@ const Packages = () => {
 
                 <div style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                     gap: '2rem',
                     alignItems: 'start'
                 }}>
