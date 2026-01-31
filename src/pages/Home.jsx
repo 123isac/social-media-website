@@ -130,21 +130,25 @@ const Home = () => {
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
                         {/* Gradient Placeholders for Portfolio Items */}
-                        {[1, 2, 3].map((item) => (
-                            <div key={item} style={{ borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
+                        {[
+                            { img: '/sample-jewellery.png', title: 'Elegant Jewellery Brand', tag: 'Daily posts & Story engagement' },
+                            { img: '/sample-cafe.png', title: 'Urban Coffee Shop', tag: 'Aesthetic food photography' },
+                            { img: '/sample-real-estate.png', title: 'Luxury Real Estate', tag: 'Lead generation campaigns' }
+                        ].map((item, index) => (
+                            <div key={index} style={{ borderRadius: 'var(--radius)', overflow: 'hidden', boxShadow: 'var(--shadow-md)' }}>
                                 <div style={{
                                     height: '300px',
-                                    background: `linear-gradient(${135 + item * 45}deg, #e0e7ff 0%, #f3e8ff 100%)`,
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
                                     position: 'relative'
                                 }}>
-                                    <span style={{ opacity: 0.3, fontWeight: '700', fontSize: '2rem', color: '#6366f1' }}>SAMPLE {item}</span>
+                                    <img
+                                        src={item.img}
+                                        alt={item.title}
+                                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                    />
                                 </div>
                                 <div style={{ padding: '1.5rem' }}>
-                                    <p style={{ fontWeight: '600', color: 'var(--color-text)' }}>Elegant Jewellery Brand</p>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)' }}>Daily posts & Story engagement</p>
+                                    <p style={{ fontWeight: '600', color: 'var(--color-text)' }}>{item.title}</p>
+                                    <p style={{ fontSize: '0.9rem', color: 'var(--color-text-light)' }}>{item.tag}</p>
                                 </div>
                             </div>
                         ))}
