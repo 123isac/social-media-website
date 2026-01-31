@@ -56,7 +56,7 @@ const Contact = () => {
                                 <div>
                                     <h3 style={{ fontSize: '1.2rem', fontWeight: '600', marginBottom: '0.5rem' }}>Chat with us</h3>
                                     <p style={{ color: 'var(--color-text-light)', marginBottom: '0.5rem' }}>Our friendly team is here to help.</p>
-                                    <a href="#" className="text-gradient" style={{ fontWeight: '600' }}>Start a WhatsApp Chat</a>
+                                    <a href="https://wa.me/254731785795" target="_blank" rel="noopener noreferrer" className="text-gradient" style={{ fontWeight: '600' }}>Start a WhatsApp Chat</a>
                                 </div>
                             </div>
 
