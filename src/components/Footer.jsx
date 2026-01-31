@@ -44,7 +44,7 @@ const Footer = () => {
                         <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                             <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', color: 'var(--color-text-light)' }}>
                                 <Mail size={18} />
-                                <span>smartsocials254@gmail.com</span>
+                                <span>smartsocial254@gmail.com</span>
                             </li>
                             <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', color: 'var(--color-text-light)' }}>
                                 <Phone size={18} />

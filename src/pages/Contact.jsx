@@ -65,10 +65,11 @@ const Contact = () => {
                                     <Mail size={24} />
                                 </div>
                                 <div>
-                                    <h3 style={{ fontSize: '1.2rem', fontWeight: '600', marginBottom: '0.5rem' }}>Email us</h3>
-                                    <p style={{ color: 'var(--color-text-light)', marginBottom: '0.5rem' }}>Drop us a line anytime.</p>
-                                    <a href="mailto:smartsocials254@gmail.com" style={{ color: 'var(--color-text)', fontWeight: '600' }}>smartsocials254@gmail.com</a>
-                                </div>
+                                    <div>
+                                        <h3 style={{ fontSize: '1.2rem', fontWeight: '600', marginBottom: '0.5rem' }}>Email us</h3>
+                                        <p style={{ color: 'var(--color-text-light)', marginBottom: '0.5rem' }}>Drop us a line anytime.</p>
+                                        <a href="mailto:smartsocial254@gmail.com" style={{ color: 'var(--color-text)', fontWeight: '600' }}>smartsocial254@gmail.com</a>
+                                    </div>                </div>
                             </div>
 
                             <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
