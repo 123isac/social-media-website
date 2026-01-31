@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle } from 'lucide-react';
 import Button from '../components/Button';
 
 const Packages = () => {
+    const [activeTab, setActiveTab] = useState(1); // Default to 'Pro' (index 1)
+
     const packages = [
         {
-            name: "4k Package",
+            name: "Go",
             price: "4,000",
             features: [
-                { name: "Bot Integration", detail: "Runs twice a week", included: true },
                 { name: "4 Posts per week", included: true },
                 { name: "Basic Captions", included: true },
                 { name: "Hashtag Strategy", included: true },
@@ -20,10 +21,9 @@ const Packages = () => {
             popular: false
         },
         {
-            name: "8k Package",
+            name: "Pro",
             price: "8,000",
             features: [
-                { name: "Bot Integration", detail: "Runs daily", included: true },
                 { name: "5 Posts per week", included: true },
                 { name: "Engaging Captions", included: true },
                 { name: "Hashtag Strategy", included: true },
@@ -34,10 +34,9 @@ const Packages = () => {
             popular: true
         },
         {
-            name: "16k Package",
+            name: "Premium",
             price: "16,000",
             features: [
-                { name: "Bot Integration", detail: "Runs 24/7", included: true },
                 { name: "Daily Posts (7/week)", included: true },
                 { name: "Premium Captions", included: true },
                 { name: "Advanced Hashtags", included: true },
@@ -49,91 +48,113 @@ const Packages = () => {
         }
     ];
 
+    const activePackage = packages[activeTab];
+
     return (
         <div style={{ padding: 'var(--section-padding) 0 4rem' }}>
-            <div className="container">
-                <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-                    <h1 style={{ fontSize: 'var(--h1-size)', fontWeight: '800', marginBottom: '1rem' }}>Choose Your Plan</h1>
-                    <p style={{ fontSize: '1.2rem', color: 'var(--color-text-light)' }}>
-                        Transparent pricing for every stage of growth.
+            <div className="container" style={{ maxWidth: '600px' }}> {/* Constrained width for mobile-app feel */}
+                <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                    <h1 style={{ fontSize: 'var(--h1-size)', fontWeight: '800', marginBottom: '0.5rem' }}>Choose Your Plan</h1>
+                    <p style={{ fontSize: '1.1rem', color: 'var(--color-text-light)' }}>
+                        Flexible options for your growth.
                     </p>
                 </div>
 
+                {/* Tab Switcher */}
                 <div style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                    gap: '2rem',
-                    alignItems: 'start'
+                    display: 'flex',
+                    background: '#f1f5f9',
+                    padding: '0.5rem',
+                    borderRadius: '9999px',
+                    marginBottom: '2rem',
+                    position: 'relative',
+                    boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.05)'
                 }}>
                     {packages.map((pkg, index) => (
-                        <div key={index} className="glass-card" style={{
-                            padding: '0',
-                            overflow: 'hidden',
-                            position: 'relative',
-                            border: pkg.popular ? '2px solid var(--color-primary)' : '1px solid var(--glass-border)'
-                        }}>
-                            {pkg.popular && (
-                                <div style={{
-                                    background: 'var(--color-primary)',
-                                    color: 'white',
-                                    textAlign: 'center',
-                                    padding: '0.5rem',
-                                    fontWeight: '700',
-                                    fontSize: '0.9rem',
-                                    textTransform: 'uppercase',
-                                    letterSpacing: '0.05em'
-                                }}>
-                                    Most Popular
-                                </div>
-                            )}
-
-                            <div style={{ padding: '2rem 2rem 1rem', textAlign: 'center', borderBottom: '1px solid rgba(0,0,0,0.05)' }}>
-                                <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '0.5rem' }}>{pkg.name}</h3>
-                                <div style={{ fontSize: '2.5rem', fontWeight: '800', color: 'var(--color-primary)' }}>
-                                    <span style={{ fontSize: '1rem', verticalAlign: 'top', opacity: 0.7 }}>Ksh</span>
-                                    {pkg.price}
-                                    <span style={{ fontSize: '1rem', opacity: 0.5, fontWeight: '500' }}>/mo</span>
-                                </div>
-                            </div>
-
-                            <div style={{ padding: '1rem 0' }}>
-                                {pkg.features.map((feature, i) => (
-                                    <div key={i} style={{
-                                        display: 'flex',
-                                        justifyContent: 'space-between',
-                                        alignItems: 'center',
-                                        padding: '0.75rem 2rem',
-                                        background: i % 2 === 0 ? 'rgba(255,255,255,0.3)' : 'transparent',
-                                        opacity: feature.included ? 1 : 0.6
-                                    }}>
-                                        <div style={{ display: 'flex', flexDirection: 'column', textAlign: 'left' }}>
-                                            <span style={{ fontWeight: '600', color: feature.included ? 'var(--color-text)' : 'var(--color-text-light)' }}>
-                                                {feature.name}
-                                            </span>
-                                            {feature.detail && feature.included && (
-                                                <span style={{ fontSize: '0.85rem', color: 'var(--color-primary)', fontWeight: '600' }}>{feature.detail}</span>
-                                            )}
-                                        </div>
-                                        <div>
-                                            {feature.included ? (
-                                                <CheckCircle size={20} color="var(--color-primary)" fill="rgba(59, 130, 246, 0.1)" />
-                                            ) : (
-                                                <span style={{ color: '#cbd5e1', fontSize: '1.2rem', fontWeight: 'bold' }}>—</span>
-                                            )}
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div style={{ padding: '2rem' }}>
-                                <Link to="/register">
-                                    <Button variant={pkg.popular ? "primary" : "outline"} style={{ width: '100%' }}>
-                                        Select {pkg.name}
-                                    </Button>
-                                </Link>
-                            </div>
-                        </div>
+                        <button
+                            key={index}
+                            onClick={() => setActiveTab(index)}
+                            style={{
+                                flex: 1,
+                                padding: '0.75rem',
+                                borderRadius: '9999px',
+                                border: 'none',
+                                background: activeTab === index ? 'white' : 'transparent',
+                                color: activeTab === index ? 'var(--color-text)' : 'var(--color-text-light)',
+                                fontWeight: activeTab === index ? '700' : '500',
+                                boxShadow: activeTab === index ? '0 2px 5px rgba(0,0,0,0.1)' : 'none',
+                                transition: 'all 0.3s ease',
+                                cursor: 'pointer',
+                                fontSize: '1rem'
+                            }}
+                        >
+                            {pkg.name}
+                        </button>
                     ))}
+                </div>
+
+                {/* Package Card */}
+                <div className="glass-card" style={{
+                    padding: '2rem',
+                    position: 'relative',
+                    overflow: 'hidden',
+                    borderColor: activePackage.popular ? 'var(--color-primary)' : 'var(--glass-border)',
+                    borderWidth: activePackage.popular ? '2px' : '1px'
+                }}>
+                    {activePackage.popular && (
+                        <div style={{
+                            position: 'absolute',
+                            top: '1rem',
+                            right: '1rem',
+                            background: 'var(--color-primary)',
+                            color: 'white',
+                            padding: '0.25rem 0.75rem',
+                            borderRadius: '2rem',
+                            fontSize: '0.75rem',
+                            fontWeight: '700',
+                            textTransform: 'uppercase'
+                        }}>
+                            Most Popular
+                        </div>
+                    )}
+
+                    <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
+                        <div style={{ fontSize: '3rem', fontWeight: '800', color: 'var(--color-primary)' }}>
+                            <span style={{ fontSize: '1.2rem', verticalAlign: 'top', opacity: 0.7, marginRight: '0.2rem' }}>Ksh</span>
+                            {activePackage.price}
+                            <span style={{ fontSize: '1rem', color: 'var(--color-text-light)', fontWeight: '500' }}>/mo</span>
+                        </div>
+                        <p style={{ color: 'var(--color-text-light)' }}>billed monthly</p>
+                    </div>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', marginBottom: '2.5rem' }}>
+                        {activePackage.features
+                            .filter(f => f.included) // Hide features not offered
+                            .map((feature, i) => (
+                                <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                                    <div style={{
+                                        minWidth: '24px',
+                                        height: '24px',
+                                        borderRadius: '50%',
+                                        background: 'rgba(59, 130, 246, 0.1)',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                    }}>
+                                        <CheckCircle size={14} color="var(--color-primary)" strokeWidth={3} />
+                                    </div>
+                                    <span style={{ fontSize: '1.05rem', fontWeight: '500', color: 'var(--color-text)' }}>
+                                        {feature.name}
+                                    </span>
+                                </div>
+                            ))}
+                    </div>
+
+                    <Link to="/register">
+                        <Button variant={activePackage.popular ? "primary" : "outline"} style={{ width: '100%', padding: '1rem' }}>
+                            Get {activePackage.name}
+                        </Button>
+                    </Link>
                 </div>
             </div>
         </div>
