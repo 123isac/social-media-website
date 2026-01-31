@@ -105,7 +105,7 @@ const Packages = () => {
                     {activePackage.popular && (
                         <div style={{
                             position: 'absolute',
-                            top: '1rem',
+                            top: '0.5rem',
                             right: '1rem',
                             background: 'var(--color-primary)',
                             color: 'white',
