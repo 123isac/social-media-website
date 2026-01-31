@@ -179,9 +179,9 @@ const Register = () => {
                                             backgroundColor: 'white'
                                         }}
                                     >
-                                        <option value="Organic Posting">Organic Posting (3,500 KSh)</option>
-                                        <option value="Organic + Ads">Organic + Ads (6,000 KSh)</option>
-                                        <option value="Full Social">Full Social (10,000 KSh)</option>
+                                        <option value="Organic Posting">Organic Posting (4,000 KSh)</option>
+                                        <option value="Organic + Ads">Organic + Ads (8,000 KSh)</option>
+                                        <option value="Full Social">Full Social (16,000 KSh)</option>
                                     </select>
                                     <div style={{ position: 'absolute', right: '1rem', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }}>
                                         ▼

@@ -7,7 +7,7 @@ const Packages = () => {
     const packages = [
         {
             name: 'Organic Posting',
-            price: '3,500 KSh',
+            price: '4,000 KSh',
             period: '/ month',
             features: [
                 '1 Post per day',
@@ -19,7 +19,7 @@ const Packages = () => {
         },
         {
             name: 'Organic + Ads',
-            price: '6,000 KSh',
+            price: '8,000 KSh',
             period: '/ month',
             features: [
                 'Everything in Organic',
@@ -31,7 +31,7 @@ const Packages = () => {
         },
         {
             name: 'Full Social',
-            price: '10,000 KSh',
+            price: '16,000 KSh',
             period: '/ month',
             features: [
                 'Everything in Organic + Ads',
