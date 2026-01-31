@@ -50,7 +50,7 @@ const Contact = () => {
                                 <div>
                                     <h3 style={{ fontSize: '1.2rem', fontWeight: '600', marginBottom: '0.5rem' }}>Email us</h3>
                                     <p style={{ color: 'var(--color-text-light)', marginBottom: '0.5rem' }}>Drop us a line anytime.</p>
-                                    <a href="mailto:hello@socialboost.com" style={{ color: 'var(--color-text)', fontWeight: '600' }}>hello@socialboost.com</a>
+                                    <a href="mailto:smartsocials254@gmail.com" style={{ color: 'var(--color-text)', fontWeight: '600' }}>smartsocials254@gmail.com</a>
                                 </div>
                             </div>
 
